@@ -42,8 +42,11 @@ source venv/bin/activate
 ```
 ### On windows
 
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
+
 
 To install all dependencies, use:
 
