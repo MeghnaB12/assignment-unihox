@@ -91,7 +91,7 @@ caffeinate python3 main.py
 ```
 
 The script will crawl the target URLs and download the PDFs. Extract metadata from each PDF. If the PDF does not contain embedded text, OCR will be performed to extract text.
-Save the metadata and OCR text as JSON files in the output/json_records directory.
+Save the metadata and OCR text as JSON files in the output/json_records directory. Its better if you use single URL at a time otherwise it takes a lot of time.
 
 ### Considerations and Trade-offs
 
