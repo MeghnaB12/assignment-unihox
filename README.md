@@ -1,7 +1,5 @@
 # assignment-unihox
 
-# Assignment UniHox
-
 This repository contains a set of Python scripts for extracting metadata from PDFs, downloading files, performing OCR on PDFs without text, and saving the extracted data as structured JSON files. It uses libraries like `pytesseract`, `pdfminer`, and `requests` to provide a comprehensive solution for handling PDFs.
 
 ## Features
