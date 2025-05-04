@@ -7,13 +7,7 @@ from utils.ocr import extract_text_with_ocr
 from utils.helpers import save_json, load_existing_checksums, save_checksums
 
 TARGET_URLS = [
-    "https://sanskritdocuments.org/scannedbooks/asisanskritpdfs.html",
-    "https://sanskritdocuments.org/scannedbooks/asiallpdfs.html",
-    "https://indianculture.gov.in/ebooks",
-    "https://ignca.gov.in/divisionss/asi-books/",
-    "https://archive.org/details/TFIC_ASI_Books/ACatalogueOfTheSamskritManuscriptsInTheAdyarLibraryPt.1/",
-    "https://indianmanuscripts.com/",
-    "https://niimh.nic.in/ebooks/ayuhandbook/index.php",
+    
     "https://ayushportal.nic.in/default.aspx"
 ]
 
