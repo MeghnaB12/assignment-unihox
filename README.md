@@ -49,6 +49,8 @@ To install all dependencies, use:
 
 ```bash
 pip install -r requirements.txt
+playwright install
+
 ```
 
 ### 3. Install Tesseract (for OCR)
