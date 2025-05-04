@@ -56,20 +56,20 @@ sudo apt update
 sudo apt install tesseract-ocr
 ```
 
-### 📦 Usage
+### Usage
 
-#### 🛠️ Prepare the Environment
+#### Prepare the Environment
 
 - Ensure all dependencies are installed using `pip install -r requirements.txt`.
 - Install and configure **Tesseract OCR** on your system (see above).
 - Make sure you have `poppler` installed for PDF to image conversion (`pdf2image`).
 
-#### 📝 Modify the Script
+#### Modify the Script
 
 - Open `main.py` in your editor (e.g., VS Code).
 - Update the `TARGET_URLS` list with the URLs you want to crawl and process.
 
-#### 🚀 Run the Script
+#### Run the Script
 
 ```bash
 caffeinate python3 main.py
