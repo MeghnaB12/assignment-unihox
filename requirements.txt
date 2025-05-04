@@ -4,7 +4,6 @@ pillow
 PyPDF2
 pdfminer.six
 pytesseract
-hashlib
 datetime
 playwright
 PyMuPDF
