@@ -15,17 +15,13 @@ This repository contains a set of Python scripts for extracting metadata from PD
 
 ### 1. Clone the Repository
 
-git clone https://github.com/MeghnaB12/assignment-unihox.git
-cd assignment-unihox
-
-### 1. Clone the Repository
-
 ```bash
 git clone https://github.com/MeghnaB12/assignment-unihox.git
 cd assignment-unihox
 ```
 ### 2. Install Dependencies
 Make sure you have Python 3.7+ installed. Then, install the required dependencies by running:
+
 pip install -r requirements.txt
 
 Dependencies:
@@ -60,7 +56,7 @@ Save the metadata and OCR text as JSON files in the output/json_records director
 
 ### File Structure
 
-main.py: The main script for crawling, downloading PDFs, extracting metadata, and OCR text extraction.
+--**main.py: The main script for crawling, downloading PDFs, extracting metadata, and OCR text extraction.
 utils/: Utility functions for crawling, downloading files, extracting metadata, performing OCR, and saving JSON data.
 requirements.txt: List of Python dependencies.
 output/: Directory where JSON files and other outputs are stored.
