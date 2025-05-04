@@ -1,7 +1,5 @@
 # assignment-unihox
 
-This repository contains a set of Python scripts for extracting metadata from PDFs, downloading files, performing OCR on PDFs without text, and saving the extracted data as structured JSON files. It uses libraries like `pytesseract`, `pdfminer`, and `requests` to provide a comprehensive solution for handling PDFs.
-
 ## Features
 
 - **Crawl and Download PDFs**: Automatically download PDF files from web links.
@@ -19,46 +17,80 @@ This repository contains a set of Python scripts for extracting metadata from PD
 git clone https://github.com/MeghnaB12/assignment-unihox.git
 cd assignment-unihox
 ```
-### 2. Install Dependencies
-Make sure you have Python 3.7+ installed. Then, install the required dependencies by running:
+### Dependencies
 
+The project relies on the following Python libraries:
+
+- **pytesseract**: Performs Optical Character Recognition (OCR) to extract text from images.
+- **pdf2image**: Converts PDF pages into images for OCR processing.
+- **pdfminer.six**: Extracts embedded (selectable) text directly from PDFs.
+- **requests**: Handles HTTP requests for downloading files.
+- **beautifulsoup4**: Parses and extracts PDF links from HTML pages.
+- **playwright**: Automates headless browsing and crawling of dynamic websites.
+- **hashlib**: Generates SHA-256 checksums to avoid reprocessing the same files.
+- **os** and **pathlib**: Manage file system paths and directories.
+
+To install all dependencies, use:
+
+```bash
 pip install -r requirements.txt
-
-Dependencies:
-pytesseract: OCR (Optical Character Recognition) for extracting text from images.
-pdf2image: Converts PDF pages to images for OCR processing.
-pdfminer.six: Extracts embedded text from PDFs.
-requests: For making HTTP requests to download files.
-beautifulsoup4: For scraping PDF links from web pages.
-playwright: For automating web browsing and crawling pages.
-hashlib: For generating checksums to track previously processed files.
-os and pathlib: For handling file and directory paths.
+```
 
 ### 3. Install Tesseract (for OCR)
-Tesseract is required for OCR functionality. Install it on your system as follows:
-For Windows:
-Download and install Tesseract from Tesseract GitHub.
-Add Tesseract’s installation path to your system’s PATH environment variable.
-For macOS:
-brew install tesseract
-For Linux:
-sudo apt install tesseract-ocr
 
-### Usage
-VS Code
-Prepare the environment: Ensure all dependencies are installed and Tesseract is correctly set up on your system.
-Run the Script: Modify the script main.py to include your desired URLs in the TARGET_URLS list.
-Run the script using the following command: caffeinate python3 main.py
-The script will crawl the target URLs and download the PDFs.
-Extract metadata from each PDF.
-If the PDF does not contain embedded text, OCR will be performed to extract text.
+Tesseract is required to perform OCR (Optical Character Recognition) on scanned PDFs.
+
+#### For Windows:
+1. Download the installer from the [Tesseract GitHub repository](https://github.com/tesseract-ocr/tesseract).
+2. Install it and **add the installation path** (e.g., `C:\Program Files\Tesseract-OCR`) to your system’s **PATH** environment variable.
+
+#### For macOS:
+```bash
+brew install tesseract
+```
+
+#### For Linux (Debian/Ubuntu-based):
+
+```bash
+sudo apt update
+sudo apt install tesseract-ocr
+```
+
+### 📦 Usage
+
+#### 🛠️ Prepare the Environment
+
+- Ensure all dependencies are installed using `pip install -r requirements.txt`.
+- Install and configure **Tesseract OCR** on your system (see above).
+- Make sure you have `poppler` installed for PDF to image conversion (`pdf2image`).
+
+#### 📝 Modify the Script
+
+- Open `main.py` in your editor (e.g., VS Code).
+- Update the `TARGET_URLS` list with the URLs you want to crawl and process.
+
+#### 🚀 Run the Script
+
+```bash
+caffeinate python3 main.py
+```
+
+The script will crawl the target URLs and download the PDFs. Extract metadata from each PDF. If the PDF does not contain embedded text, OCR will be performed to extract text.
 Save the metadata and OCR text as JSON files in the output/json_records directory.
 
 ### Considerations and Trade-offs
 
-Error Handling: The script includes basic error handling for network issues and PDF processing failures. This ensures that one failure does not stop the entire process.
-OCR Efficiency: OCR is used as a fallback when embedded text extraction fails. While OCR can handle images, it is generally slower and less accurate than direct text extraction. This trade-off ensures that all PDFs, even those without text, are processed.
-Checksums: The script uses SHA-256 checksums to track downloaded files. This avoids re-downloading or re-processing files. However, the checksum file (checksums.json) can grow large if many files are processed over time.
-Parallelism: The script currently processes files sequentially. For large-scale crawling and OCR tasks, adding concurrency could improve performance, but it might add complexity in handling errors and managing resources.
+- **Error Handling**  
+  The script includes basic error handling for network issues and PDF processing failures. This ensures that one failure does not stop the entire process.
+
+- **OCR Efficiency**  
+  OCR is used as a fallback when embedded text extraction fails. While OCR can handle image-based PDFs, it is generally slower and less accurate than direct text extraction. This trade-off ensures that all PDFs, including scanned documents, are processed.
+
+- **Checksums**  
+  The script uses SHA-256 checksums to track downloaded files and prevent redundant downloads or re-processing. However, the `checksums.json` file can grow large over time if many files are processed.
+
+- **Parallelism**  
+  Currently, the script processes files sequentially. For large-scale crawling and OCR tasks, introducing concurrency (e.g., with threading or async I/O) could significantly improve performance. However, it would also add complexity in error handling and resource management.
+
 
 
