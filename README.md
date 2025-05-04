@@ -45,21 +45,14 @@ For Linux:
 sudo apt install tesseract-ocr
 
 ### Usage
-
+VS Code
 Prepare the environment: Ensure all dependencies are installed and Tesseract is correctly set up on your system.
 Run the Script: Modify the script main.py to include your desired URLs in the TARGET_URLS list.
-Run the script using the following command: python main.py
+Run the script using the following command: caffeinate python3 main.py
 The script will crawl the target URLs and download the PDFs.
 Extract metadata from each PDF.
 If the PDF does not contain embedded text, OCR will be performed to extract text.
 Save the metadata and OCR text as JSON files in the output/json_records directory.
-
-### File Structure
-
---**main.py: The main script for crawling, downloading PDFs, extracting metadata, and OCR text extraction.
-utils/: Utility functions for crawling, downloading files, extracting metadata, performing OCR, and saving JSON data.
-requirements.txt: List of Python dependencies.
-output/: Directory where JSON files and other outputs are stored.
 
 ### Considerations and Trade-offs
 
