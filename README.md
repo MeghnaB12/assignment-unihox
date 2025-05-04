@@ -30,6 +30,21 @@ The project relies on the following Python libraries:
 - **hashlib**: Generates SHA-256 checksums to avoid reprocessing the same files.
 - **os** and **pathlib**: Manage file system paths and directories.
 
+### Setting Up a Virtual Environment
+
+To isolate project dependencies, build a Python virtual environment.
+
+### On macOS/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+### On windows
+
+python -m venv venv
+venv\Scripts\activate
+
 To install all dependencies, use:
 
 ```bash
